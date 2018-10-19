@@ -24,7 +24,7 @@ dist:
 	sed "s/^/' LICENSE: /g" ./LICENSE >> $(DISTDIR)/rooibos.cat.brs
 	#LEADING_WHITESPACE_RE is chopping off t's for the time being. need to fix it
 	#cd src && ls | xargs -J % sed -E -e ${COMMENT_LINES_RE} -e ${BLANK_LINES_RE} -e ${LEADING_WHITESPACE_RE} % >> ../dist/rooibos.cat.brs
-	cd src && ls | xargs -J % sed -E -e ${COMMENT_LINES_RE} -e ${BLANK_LINES_RE} % >> ../$(DISTDIR)/rooibos.cat.brs
+	cd src && ls | xargs -I % sed -E -e ${COMMENT_LINES_RE} -e ${BLANK_LINES_RE} % >> ../$(DISTDIR)/rooibos.cat.brs
 	cp $(DISTDIR)/rooibos.cat.brs source
 	cp $(DISTDIR)/rooibos.cat.brs samples/Overview/source
 doc:
